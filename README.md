@@ -28,7 +28,7 @@ Follow these steps to set up the project locally.
 ## 1️⃣ Clone the Repository
 
 ```sh
-git clone https://github.com/your-username/note-app.git
+git clone https://github.com/poypoy252525/note-app.git
 cd note-app
 ```
 
