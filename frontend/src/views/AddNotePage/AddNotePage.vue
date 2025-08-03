@@ -28,7 +28,7 @@ const handleSubmit = async () => {
   }
   try {
     loading.value = true
-    await axios.post(`http://localhost:8000/api/notes/create/`, {
+    await axios.post(`${import.meta.env.VITE_API_URL}/api/notes/create/`, {
       title: title.value,
       content: content.value,
       category: category.value,

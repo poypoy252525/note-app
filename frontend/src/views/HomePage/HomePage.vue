@@ -8,7 +8,7 @@ import { columns } from './columns'
 const data = ref<Note[]>([])
 
 onMounted(async () => {
-  const { data: notes } = await axios.get<Note[]>('http://localhost:8000/api/notes/')
+  const { data: notes } = await axios.get<Note[]>(`${import.meta.env.VITE_API_URL}/api/notes/`)
   data.value = notes
 })
 </script>

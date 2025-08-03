@@ -20,7 +20,9 @@ const loading = ref(false)
 
 onMounted(async () => {
   try {
-    const { data } = await axios.get<Note>(`http://localhost:8000/api/notes/${route.params.id}`)
+    const { data } = await axios.get<Note>(
+      `${import.meta.env.VITE_API_URL}/api/notes/${route.params.id}`,
+    )
     content.value = data.content!
     title.value = data.title!
     category.value = data.category!
@@ -33,7 +35,7 @@ const handleSubmit = async () => {
   if (!title.value || !content.value || !category.value) return
   try {
     loading.value = true
-    await axios.patch(`http://localhost:8000/api/notes/${route.params.id}/`, {
+    await axios.patch(`${import.meta.env.VITE_API_URL}/api/notes/${route.params.id}/`, {
       title: title.value,
       content: content.value,
       category: category.value,

@@ -12,7 +12,7 @@ const router = useRouter()
 
 const handleDelete = async () => {
   try {
-    await axios.delete(`http://localhost:8000/api/notes/${props.id}/`)
+    await axios.delete(`${import.meta.env.VITE_API_URL}/api/notes/${props.id}/`)
     await router.replace({
       path: router.currentRoute.value.fullPath,
       query: {

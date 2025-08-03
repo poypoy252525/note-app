@@ -8,7 +8,7 @@ const route = useRoute()
 const note = ref({} as Note)
 
 onMounted(async () => {
-  const { data } = await axios.get(`http://localhost:8000/api/notes/${route.params.id}`)
+  const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/api/notes/${route.params.id}`)
   note.value = data
 
   console.log(note.value)
