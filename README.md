@@ -99,8 +99,8 @@ npm run lint
 
 ## ⚙️ Configuration
 
-- Frontend configuration: [frontend/.env](frontend/.env)
-- Backend configuration: [backend/.env](backend/.env)
+- Frontend configuration: [frontend/.env](frontend/.env.example)
+- Backend configuration: [backend/.env](backend/.env.example)
 
 ---
 
