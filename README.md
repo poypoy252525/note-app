@@ -8,7 +8,7 @@ A full-stack web application powered by **Vue 3 + Vite** on the frontend and **D
 
 - **Frontend:** Vue 3, Vite, Tailwind CSS
 - **Backend:** Django, Django REST Framework
-- **Database:** SQLite (default, can be switched to PostgreSQL)
+- **Database:** PostgreSQL
 
 ---
 
