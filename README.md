@@ -39,9 +39,13 @@ cd note-app
 ```sh
 cd backend
 python -m venv venv
-venv/bin/activate  # On Windows: venv\Scripts\activate
+venv/Scripts/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 cp .env.example .env      # Edit .env as needed
+```
+Make sure that you set the right value of .env base on your PostgreSQL name and user
+
+```sh
 python manage.py migrate
 python manage.py runserver
 ```
