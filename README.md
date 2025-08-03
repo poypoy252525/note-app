@@ -97,6 +97,61 @@ npm run lint
 
 ---
 
+## 🗄️ Setting Up PostgreSQL Locally
+
+The backend uses PostgreSQL as its database. Follow these steps to set up PostgreSQL for local development:
+
+### 1. Install PostgreSQL
+
+- **Windows/Mac:** Download and install from [https://www.postgresql.org/download/](https://www.postgresql.org/download/)
+- **Linux (Debian/Ubuntu):**
+  ```sh
+  sudo apt update
+  sudo apt install postgresql postgresql-contrib
+  ```
+
+### 2. Create a Database and User
+
+Open your terminal and run:
+
+```sh
+# Access PostgreSQL prompt
+psql -U postgres
+
+# In the prompt, run:
+CREATE DATABASE noteapp;
+CREATE USER noteuser WITH PASSWORD 'yourpassword';
+ALTER ROLE noteuser SET client_encoding TO 'utf8';
+ALTER ROLE noteuser SET default_transaction_isolation TO 'read committed';
+ALTER ROLE noteuser SET timezone TO 'UTC';
+GRANT ALL PRIVILEGES ON DATABASE noteapp TO noteuser;
+```
+
+### 3. Configure Environment Variables
+
+Edit [backend/.env](backend/.env) with your database credentials:
+
+```
+NAME=noteapp
+USER=noteuser
+PASSWORD=yourpassword
+HOST=localhost
+PORT=5432
+```
+
+### 4. Apply Migrations
+
+```sh
+cd backend
+python manage.py migrate
+```
+
+---
+
+**Tip:** If you change your database credentials, update both [backend/.env](backend/.env) and [backend/config/settings.py](backend/config/settings.py) accordingly.
+
+---
+
 ## ⚙️ Configuration
 
 - Frontend configuration: [frontend/.env](frontend/.env.example)
